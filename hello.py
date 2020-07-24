@@ -23,9 +23,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/hello')
+@app.route('/login')
 def hello():
-    return 'Hello world'
+    return render_template('login.html')
 
 
 if __name__ == "__main__":
