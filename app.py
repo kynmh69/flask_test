@@ -17,7 +17,7 @@ firebase_admin.initialize_app(cred, dict(projectId=PROJECT_ID))
 db: Client = firestore.client()
 users_ref = db.collection(u'users')
 docs: Query = users_ref.start_at(dict(username='hiroki'))
-print(docs.get())
+# print(docs.get())
 
 
 @app.context_processor

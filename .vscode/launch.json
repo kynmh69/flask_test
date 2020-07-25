@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Python: Flask",
             "type": "python",
             "request": "launch",
@@ -22,10 +29,10 @@
             "jinja": true
         },
         {
-            "name": "Python: Current File",
+            "name": "Python: app File",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "/Users/Hiroki/Applications/PythonProjects/flask_test/app.py",
             "console": "integratedTerminal"
         }
     ]
