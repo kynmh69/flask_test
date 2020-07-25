@@ -1,7 +1,20 @@
 import os
 from flask import Flask, render_template, url_for
+import firebase_admin
+from firebase_admin.credentials import Certificate
+from firebase_admin import firestore
 
+PROJECT_ID = 'mywebpage-3a2bd'
+SERVICE_ACCOUNT_KEY_PATH = '/Users/Hiroki/Applications/PythonProjects/flask_test/mywebpage-3a2bd-firebase-adminsdk-o3ntg-8a383c01f5.json'
 app = Flask(__name__)
+cred = Certificate(SERVICE_ACCOUNT_KEY_PATH)
+firebase_admin.initialize_app(cred, dict(projectId=PROJECT_ID))
+
+db = firestore.client()
+users_ref = db.collection(u'users')
+docs = users_ref.steam()
+for doc in docs:
+    print(u'{} => {}'.format(doc.id, doc.to_dict()))
 
 
 @app.context_processor
